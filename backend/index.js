@@ -23,4 +23,15 @@ app.post("/authenticate", async (req, res) => {
 
 });
 
+app.get("/", async (req, res) => {
+
+  // Get or create user on Chat Engine!
+  try {
+    return res.status(200).json("Running");
+  } catch (e) {
+    return res.status(404).json("Not Found");
+  }
+
+});
+
 app.listen(3001);
