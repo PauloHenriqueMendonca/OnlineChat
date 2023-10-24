@@ -5,11 +5,11 @@ const AuthPage = (props) => {
     e.preventDefault();
     const { value } = e.target[0];
     axios.post(
-      'http://localhost:3001/authenticate',
+      "https://online-chat-engine.onrender.com/authenticate",
       {username: value})
     // eslint-disable-next-line react/prop-types
     .then(r => props.onAuth({ ...r.data, secret: value }))
-    .catch(e => console.log('error', e))
+    .catch(e => console.log('Auth error', e))
   };
 
   return (
